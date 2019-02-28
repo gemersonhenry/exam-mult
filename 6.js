@@ -17,16 +17,12 @@ const arrPersonas = [
 ]
 
 function getPerson(index) {
-  if (isValidIndex(index)) {
-    const person = {...arrPersonas[index]};
-    person.name = 'choy';
-    return person;
+  if (!arrPersonas[index]) {
+    return 'La posición ingresada no existe';
   }
-  return 'La posición ingresada no existe';
-}
-
-function isValidIndex(index) {
-  return index >= 0 && index < arrPersonas.length;
+  const person = {...arrPersonas[index]};
+  person.name = 'choy';
+  return person;
 }
 
 const person = getPerson(1);
